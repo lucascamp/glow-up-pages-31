@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageCircle } from "lucide-react";
 
@@ -22,45 +21,64 @@ const AboutSection = () => {
 
   return (
     <section id="quem-somos" ref={ref} className="py-32 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
           <p className="text-primary text-sm tracking-[0.3em] uppercase mb-4 font-medium">Nossa Equipe</p>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">Quem Somos</h2>
           <div className="w-16 h-px bg-primary/40 mx-auto" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="flex flex-col md:flex-row items-stretch gap-0">
           {team.map((person, i) => (
             <motion.div
               key={person.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="bg-card border border-border p-8 text-center group hover:border-primary/30 transition-colors"
+              initial={{ opacity: 0, x: i === 0 ? -40 : 40 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: i * 0.2 }}
+              className="relative flex-1 group"
             >
-              <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 border-2 border-primary/20">
+              {/* Photo */}
+              <div className="relative h-[500px] md:h-[600px] overflow-hidden">
                 <img
                   src={person.photo}
                   alt={person.name}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
+                {/* Gradient overlay from bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+
+                {/* Content pinned to bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <h3 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2">
+                        {person.name}
+                      </h3>
+                      <div className="w-10 h-px bg-primary mb-4" />
+                    </div>
+                    <a
+                      href={person.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/20 px-5 py-3 text-sm text-primary hover:bg-primary/20 transition-colors mb-1"
+                    >
+                      <MessageCircle size={16} />
+                      <span className="hidden sm:inline">WhatsApp</span>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-heading text-xl font-semibold mb-4">{person.name}</h3>
-              <a
-                href={person.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-primary hover:opacity-80 transition-opacity"
-              >
-                <MessageCircle size={16} />
-                WhatsApp
-              </a>
+
+              {/* Vertical divider between cards */}
+              {i === 0 && (
+                <div className="hidden md:block absolute right-0 top-[10%] bottom-[10%] w-px bg-border z-10" />
+              )}
             </motion.div>
           ))}
         </div>
