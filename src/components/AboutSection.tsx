@@ -4,8 +4,16 @@ import { useRef } from "react";
 import { MessageCircle } from "lucide-react";
 
 const team = [
-  { name: "Leila Rolindo", whatsapp: "https://wa.me/55031987059881" },
-  { name: "Beto Paiva", whatsapp: "https://wa.me/55031988149574" },
+  {
+    name: "Leila Rolindo",
+    photo: "https://orm-grupo-tellar.vercel.app/assets/leila-DPR0Hm4I.jpg",
+    whatsapp: "https://wa.me/55031987059881",
+  },
+  {
+    name: "Beto Paiva",
+    photo: "https://orm-grupo-tellar.vercel.app/assets/beto-CYCLO1Y4.jpg",
+    whatsapp: "https://wa.me/55031988149574",
+  },
 ];
 
 const AboutSection = () => {
@@ -35,10 +43,13 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: i * 0.2 }}
               className="bg-card border border-border p-8 text-center group hover:border-primary/30 transition-colors"
             >
-              <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center mx-auto mb-6">
-                <span className="font-heading text-2xl text-primary font-bold">
-                  {person.name.charAt(0)}
-                </span>
+              <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 border-2 border-primary/20">
+                <img
+                  src={person.photo}
+                  alt={person.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="font-heading text-xl font-semibold mb-4">{person.name}</h3>
               <a
