@@ -1,16 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryImages = [
-  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-1-CqNs_hCs.jpg", alt: "Evento de café" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-3-DnHQ50ng.jpg", alt: "Trabalho técnico" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-4-C4Nketxt.jpg", alt: "Café Donquintal" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-5-Dl2x55Mk.jpg", alt: "Equipe em ação" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-8-CRXbxC7l.png", alt: "Selo de qualidade" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação", span: "col-span-2 row-span-2" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-1-CqNs_hCs.jpg", alt: "Evento de café", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-3-DnHQ50ng.jpg", alt: "Trabalho técnico", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-4-C4Nketxt.jpg", alt: "Café Donquintal", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-5-Dl2x55Mk.jpg", alt: "Equipe em ação", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café", span: "col-span-2" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-8-CRXbxC7l.png", alt: "Selo de qualidade", span: "" },
 ];
 
 const GallerySection = () => {
@@ -33,26 +33,24 @@ const GallerySection = () => {
             <div className="w-16 h-px bg-primary/40 mx-auto" />
           </motion.div>
 
-          {/* Masonry-style grid */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] md:auto-rows-[220px] gap-3">
             {galleryImages.map((img, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="break-inside-avoid group cursor-pointer relative overflow-hidden"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+                className={`group cursor-pointer relative overflow-hidden ${img.span}`}
                 onClick={() => setLightbox(i)}
               >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/40 transition-colors duration-300 flex items-end">
-                  <p className="text-foreground text-sm font-medium px-4 py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
+                  <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">
                     {img.alt}
                   </p>
                 </div>
@@ -67,35 +65,33 @@ const GallerySection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-md flex items-center justify-center p-6"
           onClick={() => setLightbox(null)}
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-6 right-6 text-foreground hover:text-primary transition-colors"
+            className="absolute top-6 right-6 text-foreground hover:text-primary transition-colors z-10"
           >
             <X size={28} />
           </button>
 
-          {/* Nav arrows */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               setLightbox((lightbox - 1 + galleryImages.length) % galleryImages.length);
             }}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-foreground hover:text-primary text-3xl font-light transition-colors"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-foreground hover:text-primary transition-colors z-10"
           >
-            ‹
+            <ChevronLeft size={36} />
           </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               setLightbox((lightbox + 1) % galleryImages.length);
             }}
-            className="absolute right-6 top-1/2 -translate-y-1/2 text-foreground hover:text-primary text-3xl font-light transition-colors"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-foreground hover:text-primary transition-colors z-10"
           >
-            ›
+            <ChevronRight size={36} />
           </button>
 
           <motion.img
@@ -105,7 +101,7 @@ const GallerySection = () => {
             transition={{ duration: 0.3 }}
             src={galleryImages[lightbox].src}
             alt={galleryImages[lightbox].alt}
-            className="max-w-full max-h-[85vh] object-contain"
+            className="max-w-full max-h-[80vh] object-contain"
             onClick={(e) => e.stopPropagation()}
           />
 
