@@ -1,13 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import betoCoffee from "@/assets/beto-coffee.jpg";
+import donquintalProduct from "@/assets/donquintal-product.jpg";
+import betoMining from "@/assets/beto-mining.jpg";
+import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
 
 const galleryImages = [
   { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação", span: "col-span-2 row-span-2" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-1-CqNs_hCs.jpg", alt: "Evento de café", span: "" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-3-DnHQ50ng.jpg", alt: "Trabalho técnico", span: "" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-4-C4Nketxt.jpg", alt: "Café Donquintal", span: "" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-5-Dl2x55Mk.jpg", alt: "Equipe em ação", span: "" },
+  { src: betoCoffee, alt: "Beto no Café Donquintal", span: "" },
+  { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos", span: "" },
+  { src: betoMining, alt: "Beto na operação portuária", span: "" },
+  { src: leilaBetoMining, alt: "Leila e Beto na mineração", span: "" },
   { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café", span: "col-span-2" },
   { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "" },
   { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-8-CRXbxC7l.png", alt: "Selo de qualidade", span: "" },
@@ -60,7 +64,6 @@ const GallerySection = () => {
         </div>
       </section>
 
-      {/* Lightbox */}
       {lightbox !== null && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -74,26 +77,18 @@ const GallerySection = () => {
           >
             <X size={28} />
           </button>
-
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setLightbox((lightbox - 1 + galleryImages.length) % galleryImages.length);
-            }}
+            onClick={(e) => { e.stopPropagation(); setLightbox((lightbox - 1 + galleryImages.length) % galleryImages.length); }}
             className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-foreground hover:text-primary transition-colors z-10"
           >
             <ChevronLeft size={36} />
           </button>
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setLightbox((lightbox + 1) % galleryImages.length);
-            }}
+            onClick={(e) => { e.stopPropagation(); setLightbox((lightbox + 1) % galleryImages.length); }}
             className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-foreground hover:text-primary transition-colors z-10"
           >
             <ChevronRight size={36} />
           </button>
-
           <motion.img
             key={lightbox}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -104,7 +99,6 @@ const GallerySection = () => {
             className="max-w-full max-h-[80vh] object-contain"
             onClick={(e) => e.stopPropagation()}
           />
-
           <p className="absolute bottom-6 text-sm text-muted-foreground">
             {galleryImages[lightbox].alt} — {lightbox + 1}/{galleryImages.length}
           </p>

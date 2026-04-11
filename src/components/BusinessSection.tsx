@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import miningImg from "@/assets/mining-equipment.jpg";
-import coffeeImg from "@/assets/coffee.jpg";
+import miningImg from "@/assets/leila-beto-mining.jpg";
+import coffeeImg from "@/assets/beto-coffee.jpg";
 import realestateImg from "@/assets/realestate.jpg";
 
 const businesses = [
