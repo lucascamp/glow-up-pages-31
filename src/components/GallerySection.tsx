@@ -73,22 +73,6 @@ const GallerySection = () => {
               </div>
             </div>
           </div>
-                onClick={() => setLightbox(i)}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
-                  <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">
-                    {img.alt}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
