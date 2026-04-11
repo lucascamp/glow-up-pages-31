@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <a href="#inicio" className="flex items-center">
-          <img src={logoTellar} alt="Grupo Tellar" className="h-10 brightness-[2] contrast-[0.9]" />
+          <img src={logoTellar} alt="Grupo Tellar" className="h-10 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
         </a>
 
         <div className="hidden md:flex items-center gap-10">

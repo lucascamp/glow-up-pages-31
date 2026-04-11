@@ -14,7 +14,6 @@ const galleryImages = [
   { src: leilaBetoMining, alt: "Leila e Beto na mineração", span: "" },
   { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café", span: "col-span-2" },
   { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-8-CRXbxC7l.png", alt: "Selo de qualidade", span: "" },
 ];
 
 const GallerySection = () => {
