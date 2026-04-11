@@ -7,13 +7,13 @@ import betoMining from "@/assets/beto-mining.jpg";
 import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
 
 const galleryImages = [
-  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação" },
-  { src: betoCoffee, alt: "Beto no Café Donquintal" },
-  { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos" },
-  { src: betoMining, alt: "Beto na operação portuária" },
-  { src: leilaBetoMining, alt: "Leila e Beto na mineração" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação", span: "md:col-span-2 md:row-span-2" },
+  { src: betoCoffee, alt: "Beto no Café Donquintal", span: "" },
+  { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos", span: "" },
+  { src: betoMining, alt: "Beto na operação portuária", span: "md:col-span-2" },
+  { src: leilaBetoMining, alt: "Leila e Beto na mineração", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café", span: "" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "md:col-span-2" },
 ];
 
 const GallerySection = () => {
@@ -36,14 +36,14 @@ const GallerySection = () => {
             <div className="w-16 h-px bg-primary/40 mx-auto" />
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[220px] gap-3">
             {galleryImages.map((img, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="group cursor-pointer relative overflow-hidden aspect-square"
+                className={`group cursor-pointer relative overflow-hidden ${img.span}`}
                 onClick={() => setLightbox(i)}
               >
                 <img
