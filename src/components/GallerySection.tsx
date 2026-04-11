@@ -7,12 +7,12 @@ import betoMining from "@/assets/beto-mining.jpg";
 import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
 
 const galleryImages = [
-  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação", span: "md:col-span-2 md:row-span-2" },
-  { src: betoCoffee, alt: "Beto no Café Donquintal", span: "" },
-  { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos", span: "" },
-  { src: betoMining, alt: "Beto na operação portuária", span: "md:col-span-2" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "" },
-  { src: leilaBetoMining, alt: "Leila e Beto na mineração", span: "md:col-span-2" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação" },
+  { src: betoCoffee, alt: "Beto no Café Donquintal" },
+  { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos" },
+  { src: betoMining, alt: "Beto na operação portuária" },
+  { src: leilaBetoMining, alt: "Leila e Beto na mineração" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial" },
 ];
 
 const GallerySection = () => {
@@ -35,29 +35,43 @@ const GallerySection = () => {
             <div className="w-16 h-px bg-primary/40 mx-auto" />
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[220px] gap-3">
-            {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-                className={`group cursor-pointer relative overflow-hidden ${img.span}`}
-                onClick={() => setLightbox(i)}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
-                  <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">
-                    {img.alt}
-                  </p>
+          {/* Row 1: large left + 2 stacked right */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+            <div
+              className="group cursor-pointer relative overflow-hidden h-[300px] md:h-[460px]"
+              onClick={() => setLightbox(0)}
+            >
+              <img src={galleryImages[0].src} alt={galleryImages[0].alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
+                <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">{galleryImages[0].alt}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {galleryImages.slice(1, 5).map((img, idx) => (
+                <div
+                  key={idx + 1}
+                  className="group cursor-pointer relative overflow-hidden h-[148px] md:h-[225px]"
+                  onClick={() => setLightbox(idx + 1)}
+                >
+                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
+                    <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">{img.alt}</p>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+          </div>
+          {/* Row 2: full width */}
+          <div className="grid grid-cols-1 gap-3">
+            <div
+              className="group cursor-pointer relative overflow-hidden h-[200px] md:h-[280px]"
+              onClick={() => setLightbox(5)}
+            >
+              <img src={galleryImages[5].src} alt={galleryImages[5].alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
+                <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">{galleryImages[5].alt}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
