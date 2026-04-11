@@ -11,9 +11,8 @@ const galleryImages = [
   { src: betoCoffee, alt: "Beto no Café Donquintal", span: "" },
   { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos", span: "" },
   { src: betoMining, alt: "Beto na operação portuária", span: "md:col-span-2" },
-  { src: leilaBetoMining, alt: "Leila e Beto na mineração", span: "" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-6-CoUaMfa7.jpg", alt: "Produção de café", span: "" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "md:col-span-2" },
+  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial", span: "" },
+  { src: leilaBetoMining, alt: "Leila e Beto na mineração", span: "md:col-span-2" },
 ];
 
 const GallerySection = () => {
