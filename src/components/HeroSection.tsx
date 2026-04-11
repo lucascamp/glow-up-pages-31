@@ -20,11 +20,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-6 mb-8"
+          className="flex items-center gap-8 mb-10"
         >
-          <img src={logoTellar} alt="Grupo Tellar" className="h-14 md:h-18 brightness-[2] contrast-[0.9]" />
-          <div className="w-px h-10 bg-primary/40" />
-          <img src={logoDonquintal} alt="Café Donquintal" className="h-14 md:h-18 brightness-[2] contrast-[0.9]" />
+          <img src={logoTellar} alt="Grupo Tellar" className="h-20 md:h-28 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
+          <div className="w-px h-14 bg-foreground/30" />
+          <img src={logoDonquintal} alt="Café Donquintal" className="h-20 md:h-28 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
         </motion.div>
 
         <motion.p
