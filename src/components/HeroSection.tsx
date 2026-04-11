@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-mining.jpg";
+import logoTellar from "@/assets/logo-tellar.png";
+import logoDonquintal from "@/assets/logo-donquintal.png";
 
 const HeroSection = () => {
   return (
@@ -14,10 +16,21 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="flex items-center gap-6 mb-8"
+        >
+          <img src={logoTellar} alt="Grupo Tellar" className="h-14 md:h-18 brightness-[2] contrast-[0.9]" />
+          <div className="w-px h-10 bg-primary/40" />
+          <img src={logoDonquintal} alt="Café Donquintal" className="h-14 md:h-18 brightness-[2] contrast-[0.9]" />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="text-primary font-body text-sm tracking-[0.3em] uppercase mb-6"
         >
           Mineração · Agronegócio · Imóveis
