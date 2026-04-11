@@ -20,7 +20,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-8 mb-10"
+          className="flex items-center gap-8 mb-14"
         >
           <img src={logoTellar} alt="Grupo Tellar" className="h-24 md:h-32 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
           <div className="w-px h-16 bg-foreground/30" />
