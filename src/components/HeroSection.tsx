@@ -22,9 +22,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-8 mb-10"
         >
-          <img src={logoTellar} alt="Grupo Tellar" className="h-28 md:h-36 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
+          <img src={logoTellar} alt="Grupo Tellar" className="h-24 md:h-32 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
           <div className="w-px h-16 bg-foreground/30" />
-          <img src={logoDonquintal} alt="Café Donquintal" className="h-28 md:h-36 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
+          <img src={logoDonquintal} alt="Café Donquintal" className="h-24 md:h-32 invert brightness-[1.1] sepia saturate-[3] hue-rotate-[5deg]" />
         </motion.div>
 
         <motion.p
