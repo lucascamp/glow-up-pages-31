@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoTellar from "@/assets/logo-tellar.png";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Início", href: "#inicio" },
@@ -30,8 +32,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        <a href="#inicio" className="font-heading text-2xl font-bold text-foreground">
-          Tellar
+        <a href="#inicio" className="flex items-center">
+          <img src={logoTellar} alt="Grupo Tellar" className="h-10" />
         </a>
 
         <div className="hidden md:flex items-center gap-10">
