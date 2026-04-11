@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoTellar from "@/assets/logo-tellar.png";
-import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Início", href: "#inicio" },
