@@ -5,14 +5,16 @@ import betoCoffee from "@/assets/beto-coffee.jpg";
 import donquintalProduct from "@/assets/donquintal-product.jpg";
 import betoMining from "@/assets/beto-mining.jpg";
 import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
+import heroMining from "@/assets/hero-mining.jpg";
+import miningEquipment from "@/assets/mining-equipment.jpg";
 
 const galleryImages = [
-  { src: "https://orm-grupo-tellar.vercel.app/assets/landscape-wFRQF9RU.jpg", alt: "Vista aérea da operação" },
+  { src: heroMining, alt: "Vista aérea da operação" },
   { src: betoCoffee, alt: "Beto no Café Donquintal" },
   { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos" },
   { src: betoMining, alt: "Beto na operação portuária" },
   { src: leilaBetoMining, alt: "Leila e Beto na mineração" },
-  { src: "https://orm-grupo-tellar.vercel.app/assets/gallery-7-tzz_AldN.jpg", alt: "Operação industrial" },
+  { src: miningEquipment, alt: "Equipamentos de mineração" },
 ];
 
 const GallerySection = () => {

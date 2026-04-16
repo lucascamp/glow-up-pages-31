@@ -21,7 +21,7 @@ Resultado: empresas mais conscientes, organizadas, lucrativas e pessoas comuns r
   },
   {
     name: "Beto Paiva",
-    photo: "https://orm-grupo-tellar.vercel.app/assets/beto-CYCLO1Y4.jpg",
+    photo: betoCoffee,
     whatsapp: "https://wa.me/55031988149574",
     bio: `Casado com a Leila há 28 anos e pai da Júlia. 48 anos, empresário e atleta. Comunicador por essência, vendedor por vocação e educador por missão.
 
