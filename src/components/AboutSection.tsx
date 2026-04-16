@@ -1,11 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
+import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
+import betoCoffee from "@/assets/beto-coffee.jpg";
 
 const team = [
   {
     name: "Leila Rolindo",
-    photo: "https://orm-grupo-tellar.vercel.app/assets/leila-DPR0Hm4I.jpg",
+    photo: leilaBetoMining,
     whatsapp: "https://wa.me/55031987059881",
     bio: `Empresária, administradora e atleta, 51 anos, construiu uma trajetória sólida equilibrando alta performance nos negócios e na vida pessoal. Casada há 28 anos e mãe da Júlia, carrega na essência valores como disciplina, consistência e responsabilidade, pilares que também sustentam sua atuação profissional.
 
