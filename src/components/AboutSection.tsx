@@ -1,13 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
-import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
-import betoCoffee from "@/assets/beto-coffee.jpg";
+import profileLeila from "@/assets/profile-leila.jpg";
+import profileBeto from "@/assets/profile-beto.jpg";
 
 const team = [
   {
     name: "Leila Rolindo",
-    photo: leilaBetoMining,
+    photo: profileLeila,
     whatsapp: "https://wa.me/55031987059881",
     bio: `Empresária, administradora e atleta, 51 anos, construiu uma trajetória sólida equilibrando alta performance nos negócios e na vida pessoal. Casada há 28 anos e mãe da Júlia, carrega na essência valores como disciplina, consistência e responsabilidade, pilares que também sustentam sua atuação profissional.
 
@@ -23,7 +23,7 @@ Resultado: empresas mais conscientes, organizadas, lucrativas e pessoas comuns r
   },
   {
     name: "Beto Paiva",
-    photo: betoCoffee,
+    photo: profileBeto,
     whatsapp: "https://wa.me/55031988149574",
     bio: `Casado com a Leila há 28 anos e pai da Júlia. 48 anos, empresário e atleta. Comunicador por essência, vendedor por vocação e educador por missão.
 
