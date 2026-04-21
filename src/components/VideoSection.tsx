@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, X, Volume2, VolumeX } from "lucide-react";
+import cafeSlogan from "@/assets/cafe-slogan.jpg";
 
 const videos = [
   { src: "/videos/cafe-video-1.mp4", title: "O Café Donquintal", hasAudio: false },
