@@ -137,7 +137,7 @@ const AboutSection = () => {
               <img
                 src={team[selectedPerson].photo}
                 alt={team[selectedPerson].name}
-                className="w-20 h-20 rounded-full object-cover object-top border-2 border-primary/20"
+                className="w-20 h-20 rounded-full object-cover object-center border-2 border-primary/20"
               />
               <div>
                 <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">

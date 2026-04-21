@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, X, Volume2, VolumeX } from "lucide-react";
+import cafeSlogan from "@/assets/cafe-slogan.jpg";
 
 const videos = [
   { src: "/videos/cafe-video-1.mp4", title: "O Café Donquintal", hasAudio: false },
@@ -15,8 +16,15 @@ const VideoSection = () => {
 
   return (
     <>
-      <section id="videos" ref={ref} className="py-32 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section id="videos" ref={ref} className="py-32 px-6 relative overflow-hidden">
+        {/* Decorative coffee art background */}
+        <img
+          src={cafeSlogan}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] md:w-[700px] opacity-[0.05] select-none"
+        />
+        <div className="max-w-6xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

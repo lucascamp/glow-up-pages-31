@@ -3,13 +3,14 @@ import { useRef } from "react";
 import miningImg from "@/assets/leila-beto-mining.jpg";
 import coffeeImg from "@/assets/beto-coffee.jpg";
 import realestateImg from "@/assets/realestate.jpg";
+import miofascialImg from "@/assets/miofascial-kit.jpg";
 
 const businesses = [
   {
     title: "Grupo Tellar",
     subtitle: "25 anos",
     description:
-      "Empresa consolidada no core industrial brasileiro, com atuação estratégica em minerações, pedreiras e siderúrgicas. Especialista no fornecimento de materiais de desgaste — correias transportadoras, componentes para britadores e peneiras vibratórias.",
+      "Empresa consolidada no core industrial brasileiro, com atuação estratégica em minerações, pedreiras e siderúrgicas. Especialista no fornecimento de materiais de desgaste — correias transportadoras, componentes para britadores e peneiras vibratórias.\n\n🔺 Minas movendo a mineração.",
     image: miningImg,
   },
   {
@@ -20,10 +21,18 @@ const businesses = [
     image: coffeeImg,
   },
   {
-    title: "Imobiliário",
-    subtitle: "Investimento estratégico",
+    title: "Instrumentos Miofasciais",
+    subtitle: "@miofascialbh",
     description:
-      "Trabalhamos com imóveis de lançamento e na planta — o ponto de entrada mais inteligente para quem quer investir com previsibilidade e evoluir para um patrimônio de maior valor.",
+      "Fabricamos instrumentos especiais para fisioterapia e liberação miofascial. Linha completa — Guiador, Girafa, Tartaruga, Murraça, Tuvira, Faca, Gancheira e Pantala — com design único, polimento impecável e bordas anatômicas. Em alumínio puro, são leves, duráveis, esterilizáveis e potencializam o resultado do profissional, com menos esforço e maior conforto.",
+    image: miofascialImg,
+    imageClass: "object-contain bg-card p-6",
+  },
+  {
+    title: "Imobiliário",
+    subtitle: "CRECI-MG 5",
+    description:
+      "Entrega do mais alto nível de serviço ao cliente, com dedicação total e inteligência de mercado, aliada a um posicionamento local preciso garantindo que cada imóvel seja vendido ou alugado com máxima eficiência e valorização.",
     image: realestateImg,
   },
 ];
@@ -64,7 +73,7 @@ const BusinessSection = () => {
                   loading="lazy"
                   width={800}
                   height={600}
-                  className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+                  className={`w-full h-80 hover:scale-105 transition-transform duration-700 ${biz.imageClass ?? "object-cover"}`}
                 />
               </div>
               <div className="md:w-1/2">
@@ -73,7 +82,7 @@ const BusinessSection = () => {
                 </p>
                 <h3 className="font-heading text-3xl font-bold mb-4">{biz.title}</h3>
                 <div className="w-10 h-px bg-primary/30 mb-6" />
-                <p className="text-muted-foreground leading-relaxed">{biz.description}</p>
+                <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{biz.description}</p>
               </div>
             </motion.div>
           ))}
