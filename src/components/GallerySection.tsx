@@ -7,13 +7,17 @@ import betoMining from "@/assets/beto-mining.jpg";
 import leilaBetoMining from "@/assets/leila-beto-mining.jpg";
 import heroMining from "@/assets/hero-mining.jpg";
 import miningEquipment from "@/assets/mining-equipment.jpg";
+import miningConveyors from "@/assets/mining-conveyors.jpg";
+import miningAerial from "@/assets/mining-aerial.jpg";
 
 const galleryImages = [
   { src: heroMining, alt: "Vista aérea da operação" },
   { src: betoCoffee, alt: "Beto no Café Donquintal" },
   { src: donquintalProduct, alt: "Café Donquintal — Rubi 86 pontos" },
-  { src: betoMining, alt: "Beto na operação portuária" },
+  { src: miningConveyors, alt: "Esteiras transportadoras na pedreira" },
   { src: leilaBetoMining, alt: "Leila e Beto na mineração" },
+  { src: miningAerial, alt: "Vista aérea — britagem e peneiras" },
+  { src: betoMining, alt: "Beto na operação portuária" },
   { src: miningEquipment, alt: "Equipamentos de mineração" },
 ];
 
