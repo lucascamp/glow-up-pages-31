@@ -67,17 +67,20 @@ const GallerySection = () => {
               ))}
             </div>
           </div>
-          {/* Row 2: full width */}
-          <div className="grid grid-cols-1 gap-3">
-            <div
-              className="group cursor-pointer relative overflow-hidden h-[200px] md:h-[280px]"
-              onClick={() => setLightbox(5)}
-            >
-              <img src={galleryImages[5].src} alt={galleryImages[5].alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
-                <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">{galleryImages[5].alt}</p>
+          {/* Row 2: 3-column strip */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {galleryImages.slice(5, 8).map((img, idx) => (
+              <div
+                key={idx + 5}
+                className="group cursor-pointer relative overflow-hidden h-[200px] md:h-[260px]"
+                onClick={() => setLightbox(idx + 5)}
+              >
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/50 transition-all duration-300 flex items-center justify-center">
+                  <p className="text-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">{img.alt}</p>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
