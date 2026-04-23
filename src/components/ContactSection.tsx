@@ -26,7 +26,7 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid sm:grid-cols-2 gap-6 mb-16"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
         >
           <a
             href="https://wa.me/55031987059881"
@@ -77,6 +77,19 @@ const ContactSection = () => {
             <div className="text-left">
               <p className="text-sm text-muted-foreground">Instagram</p>
               <p className="font-medium text-foreground">@cafedonquintal</p>
+            </div>
+          </a>
+
+          <a
+            href="https://www.instagram.com/miofascialbh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 bg-card border border-border p-6 hover:border-primary/30 transition-colors group"
+          >
+            <Instagram size={20} className="text-primary" />
+            <div className="text-left">
+              <p className="text-sm text-muted-foreground">Instagram</p>
+              <p className="font-medium text-foreground">@miofascialbh</p>
             </div>
           </a>
         </motion.div>
