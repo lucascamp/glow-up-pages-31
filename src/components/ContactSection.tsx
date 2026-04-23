@@ -26,13 +26,13 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          className="grid gap-6 mb-16 sm:grid-cols-2 lg:grid-cols-6"
         >
           <a
             href="https://wa.me/55031987059881"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-card border border-border p-6 hover:border-primary/30 transition-colors group"
+            className="flex h-full items-center gap-4 border border-border bg-card p-6 transition-colors hover:border-primary/30 group lg:col-span-2"
           >
             <MessageCircle size={20} className="text-primary" />
             <div className="text-left">
@@ -45,7 +45,7 @@ const ContactSection = () => {
             href="https://wa.me/55031988149574"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-card border border-border p-6 hover:border-primary/30 transition-colors group"
+            className="flex h-full items-center gap-4 border border-border bg-card p-6 transition-colors hover:border-primary/30 group lg:col-span-2"
           >
             <MessageCircle size={20} className="text-primary" />
             <div className="text-left">
@@ -58,7 +58,7 @@ const ContactSection = () => {
             href="https://www.instagram.com/grupotellar"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-card border border-border p-6 hover:border-primary/30 transition-colors group"
+            className="flex h-full items-center gap-4 border border-border bg-card p-6 transition-colors hover:border-primary/30 group lg:col-span-2"
           >
             <Instagram size={20} className="text-primary" />
             <div className="text-left">
@@ -71,7 +71,7 @@ const ContactSection = () => {
             href="https://www.instagram.com/cafedonquintal"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-card border border-border p-6 hover:border-primary/30 transition-colors group"
+            className="flex h-full items-center gap-4 border border-border bg-card p-6 transition-colors hover:border-primary/30 group lg:col-span-2 lg:col-start-2"
           >
             <Instagram size={20} className="text-primary" />
             <div className="text-left">
@@ -84,7 +84,7 @@ const ContactSection = () => {
             href="https://www.instagram.com/miofascialbh"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-card border border-border p-6 hover:border-primary/30 transition-colors group"
+            className="flex h-full items-center gap-4 border border-border bg-card p-6 transition-colors hover:border-primary/30 group lg:col-span-2 lg:col-start-4"
           >
             <Instagram size={20} className="text-primary" />
             <div className="text-left">
