@@ -22,83 +22,31 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <motion.ul
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mb-16 max-w-md divide-y divide-border/60"
+          className="mb-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-6"
         >
-          <li>
+          {[
+            { href: "https://wa.me/55031987059881", Icon: MessageCircle, label: "Leila Rolindo" },
+            { href: "https://wa.me/55031988149574", Icon: MessageCircle, label: "Beto Paiva" },
+            { href: "https://www.instagram.com/grupotellar", Icon: Instagram, label: "@grupotellar" },
+            { href: "https://www.instagram.com/cafedonquintal", Icon: Instagram, label: "@cafedonquintal" },
+            { href: "https://www.instagram.com/miofascialbh", Icon: Instagram, label: "@miofascialbh" },
+          ].map(({ href, Icon, label }) => (
             <a
-              href="https://wa.me/55031987059881"
+              key={label}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 py-4 transition-colors hover:text-primary"
+              className="group inline-flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-primary"
             >
-              <span className="flex items-center gap-3">
-                <MessageCircle size={16} className="text-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">WhatsApp</span>
-              </span>
-              <span className="font-medium text-foreground group-hover:text-primary">Leila Rolindo</span>
+              <Icon size={16} className="text-primary transition-transform group-hover:scale-110" />
+              <span className="font-medium text-foreground group-hover:text-primary">{label}</span>
             </a>
-          </li>
-          <li>
-            <a
-              href="https://wa.me/55031988149574"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 py-4 transition-colors hover:text-primary"
-            >
-              <span className="flex items-center gap-3">
-                <MessageCircle size={16} className="text-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">WhatsApp</span>
-              </span>
-              <span className="font-medium text-foreground group-hover:text-primary">Beto Paiva</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/grupotellar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 py-4 transition-colors hover:text-primary"
-            >
-              <span className="flex items-center gap-3">
-                <Instagram size={16} className="text-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Instagram</span>
-              </span>
-              <span className="font-medium text-foreground group-hover:text-primary">@grupotellar</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/cafedonquintal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 py-4 transition-colors hover:text-primary"
-            >
-              <span className="flex items-center gap-3">
-                <Instagram size={16} className="text-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Instagram</span>
-              </span>
-              <span className="font-medium text-foreground group-hover:text-primary">@cafedonquintal</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/miofascialbh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 py-4 transition-colors hover:text-primary"
-            >
-              <span className="flex items-center gap-3">
-                <Instagram size={16} className="text-primary" />
-                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Instagram</span>
-              </span>
-              <span className="font-medium text-foreground group-hover:text-primary">@miofascialbh</span>
-            </a>
-          </li>
-        </motion.ul>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
