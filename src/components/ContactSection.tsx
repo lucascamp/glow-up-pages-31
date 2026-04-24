@@ -26,22 +26,25 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-6"
+          className="mb-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto"
         >
           {[
-            { href: "https://www.instagram.com/grupotellar", Icon: Instagram, label: "@grupotellar" },
-            { href: "https://www.instagram.com/cafedonquintal", Icon: Instagram, label: "@cafedonquintal" },
-            { href: "https://www.instagram.com/miofascialbh", Icon: Instagram, label: "@miofascialbh" },
-          ].map(({ href, Icon, label }) => (
+            { href: "https://www.instagram.com/grupotellar", Icon: Instagram, label: "@grupotellar", name: "Grupo Tellar" },
+            { href: "https://www.instagram.com/cafedonquintal", Icon: Instagram, label: "@cafedonquintal", name: "Café Donquintal" },
+            { href: "https://www.instagram.com/miofascialbh", Icon: Instagram, label: "@miofascialbh", name: "Miofascial BH" },
+          ].map(({ href, Icon, label, name }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="group flex flex-col items-center justify-center gap-3 rounded-lg border border-border bg-card/40 px-6 py-8 transition-all hover:border-primary/50 hover:bg-card/70 hover:-translate-y-1"
             >
-              <Icon size={16} className="text-primary transition-transform group-hover:scale-110" />
-              <span className="font-medium text-foreground group-hover:text-primary">{label}</span>
+              <Icon size={22} className="text-primary transition-transform group-hover:scale-110" />
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{name}</span>
+                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{label}</span>
+              </div>
             </a>
           ))}
         </motion.div>
