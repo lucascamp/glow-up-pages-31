@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MessageCircle, Instagram, MapPin } from "lucide-react";
+import { Instagram, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -26,11 +26,9 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-6"
+          className="mb-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-6"
         >
           {[
-            { href: "https://wa.me/55031987059881", Icon: MessageCircle, label: "Leila Rolindo" },
-            { href: "https://wa.me/55031988149574", Icon: MessageCircle, label: "Beto Paiva" },
             { href: "https://www.instagram.com/grupotellar", Icon: Instagram, label: "@grupotellar" },
             { href: "https://www.instagram.com/cafedonquintal", Icon: Instagram, label: "@cafedonquintal" },
             { href: "https://www.instagram.com/miofascialbh", Icon: Instagram, label: "@miofascialbh" },
