@@ -5,7 +5,6 @@ import { Play, X, Volume2, VolumeX } from "lucide-react";
 const videos = [
   { src: "/videos/cafe-video-1.mp4", title: "O Café Donquintal", hasAudio: false },
   { src: "/videos/cafe-video-2.mp4", title: "Da Fazenda à Xícara", hasAudio: true },
-  { src: "/videos/cafe-video-3.mp4", title: "Nosso Processo", hasAudio: false },
 ];
 
 const VideoSection = () => {
@@ -32,8 +31,8 @@ const VideoSection = () => {
             <div className="w-16 h-px bg-primary/40 mx-auto" />
           </motion.div>
 
-          {/* Featured video (with audio) in center, flanked by ambient loops */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+          {/* Two videos centered and responsive */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center max-w-2xl mx-auto">
             {/* Left ambient video */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
